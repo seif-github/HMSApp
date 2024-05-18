@@ -2018,19 +2018,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Seif\\.nuget\\packages\\": {}
+    "C:\\Users\\Zeyad Hussien\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FCAI-CU\\Second Year\\Second Semester\\Database\\Project\\HMSApp2\\HMSApp2\\HMSApp2.csproj",
+      "projectUniqueName": "C:\\Users\\Zeyad Hussien\\Desktop\\HMS - Project\\HMSApp\\HMSApp2\\HMSApp2.csproj",
       "projectName": "HMSApp2",
-      "projectPath": "D:\\FCAI-CU\\Second Year\\Second Semester\\Database\\Project\\HMSApp2\\HMSApp2\\HMSApp2.csproj",
-      "packagesPath": "C:\\Users\\Seif\\.nuget\\packages\\",
-      "outputPath": "D:\\FCAI-CU\\Second Year\\Second Semester\\Database\\Project\\HMSApp2\\HMSApp2\\obj\\",
+      "projectPath": "C:\\Users\\Zeyad Hussien\\Desktop\\HMS - Project\\HMSApp\\HMSApp2\\HMSApp2.csproj",
+      "packagesPath": "C:\\Users\\Zeyad Hussien\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Zeyad Hussien\\Desktop\\HMS - Project\\HMSApp\\HMSApp2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Seif\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Zeyad Hussien\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2050,6 +2050,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2080,7 +2085,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -187,5 +187,9 @@ namespace HMSApp2
             dataGridView2.DataSource = LoadMEDICATION();
         }
 
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

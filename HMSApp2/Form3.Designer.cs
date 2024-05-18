@@ -363,6 +363,7 @@
             Controls.Add(button1);
             Name = "Form3";
             Text = "Doctor Page";
+            Load += Form3_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
