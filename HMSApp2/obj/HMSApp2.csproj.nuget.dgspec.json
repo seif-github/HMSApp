@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Zeyad Hussien\\Desktop\\HMS - Project\\HMSApp\\HMSApp2\\HMSApp2.csproj": {}
+    "D:\\GitHub_Repos\\HMSApp\\HMSApp2\\HMSApp2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zeyad Hussien\\Desktop\\HMS - Project\\HMSApp\\HMSApp2\\HMSApp2.csproj": {
+    "D:\\GitHub_Repos\\HMSApp\\HMSApp2\\HMSApp2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zeyad Hussien\\Desktop\\HMS - Project\\HMSApp\\HMSApp2\\HMSApp2.csproj",
+        "projectUniqueName": "D:\\GitHub_Repos\\HMSApp\\HMSApp2\\HMSApp2.csproj",
         "projectName": "HMSApp2",
-        "projectPath": "C:\\Users\\Zeyad Hussien\\Desktop\\HMS - Project\\HMSApp\\HMSApp2\\HMSApp2.csproj",
-        "packagesPath": "C:\\Users\\Zeyad Hussien\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zeyad Hussien\\Desktop\\HMS - Project\\HMSApp\\HMSApp2\\obj\\",
+        "projectPath": "D:\\GitHub_Repos\\HMSApp\\HMSApp2\\HMSApp2.csproj",
+        "packagesPath": "C:\\Users\\Seif\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub_Repos\\HMSApp\\HMSApp2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Zeyad Hussien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Seif\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -69,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

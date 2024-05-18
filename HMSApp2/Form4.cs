@@ -14,7 +14,7 @@ namespace HMSApp2
 {
     public partial class Form4 : Form
     {
-        SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=\"HMS - Project\";Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=SEIF;Initial Catalog=HMSDB5;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
 
         public DataTable LoadPatient()
         {
@@ -28,7 +28,6 @@ namespace HMSApp2
             return dt;
         }
 
-
         public DataTable LoadAPPOINTMENT()
         {
             DataTable dt = new DataTable();
@@ -41,11 +40,8 @@ namespace HMSApp2
             return dt;
         }
 
-
-
         public Form4()
         {
-            InitializeComponent();
             InitializeComponent();
             dataGridView1.DataSource = LoadPatient();
             //dataGridView2.DataSource = LoadAPPOINTMENT();
@@ -65,16 +61,15 @@ namespace HMSApp2
         }
 
         //Patient Add button
-
         private void button2_Click(object sender, EventArgs e)
         {
             conn.Open();
-            string insertQuery = "INSERT INTO PATIENT( NAME, ADDRESS , PHONENUMBER , EMERGENCYCONTACTNAME , EMERGENCYCONTACTPHONE , INSURANCEINFORMATION ) VALUES( @name, @address , @phonenumber , @emergencycontactname , @emergencycontactphone  , @insuranceinformation  )";
+            string insertQuery = "INSERT INTO PATIENT(PATIENT_ID, NAME, DATEOFBIRTH, ADDRESS , PHONENUMBER , EMERGENCYCONTACTNAME , EMERGENCYCONTACTPHONE , INSURANCEINFORMATION ) VALUES(@id, @name, @dateofbirth, @address , @phonenumber , @emergencycontactname , @emergencycontactphone  , @insuranceinformation  )";
             SqlCommand cmd = new SqlCommand(insertQuery, conn);
 
-            //cmd.Parameters.AddWithValue("@id", pID_txt.Text);
+            cmd.Parameters.AddWithValue("@id", pID_txt.Text);
             cmd.Parameters.AddWithValue("@name", name_txt.Text);
-           // cmd.Parameters.AddWithValue("@dateofbirth", birth_txt.Text);
+            cmd.Parameters.AddWithValue("@dateofbirth", birth_txt.Text);
             cmd.Parameters.AddWithValue("@address", add_txt.Text);
             cmd.Parameters.AddWithValue("@phonenumber", phone_txt.Text);
             cmd.Parameters.AddWithValue("@emergencycontactname", cname_txt.Text);
@@ -82,9 +77,9 @@ namespace HMSApp2
             cmd.Parameters.AddWithValue("@insuranceinformation", info_txt.Text);
 
             cmd.ExecuteNonQuery();
-            //pID_txt.Text = "";
+            pID_txt.Text = "";
             name_txt.Text = "";
-           // birth_txt.Text = "";
+            birth_txt.Text = "";
             add_txt.Text = "";
             phone_txt.Text = "";
             cname_txt.Text = "";
@@ -100,7 +95,7 @@ namespace HMSApp2
         private void button4_Click(object sender, EventArgs e)
         {
             conn.Open();
-            string updateQuery = "UPDATE PATIENT SET PATIENT_ID=@id , NAME=@name,  DATEOFBIRTH=@birthdate, ADDRESS=@address , PHONENUMBER=@phonenumber ,EMERGENCYCONTACTNAME=@emergencycontactname ,EMERGENCYCONTACTPHONE=@emergencycontactphone , INSURANCEINFORMATION=@insuranceinformation ,    WHERE PATIENT_ID=@id";
+            string updateQuery = "UPDATE PATIENT SET PATIENT_ID=@id , NAME=@name,  DATEOFBIRTH=@dateofbirth, ADDRESS=@address , PHONENUMBER=@phonenumber ,EMERGENCYCONTACTNAME=@emergencycontactname ,EMERGENCYCONTACTPHONE=@emergencycontactphone , INSURANCEINFORMATION=@insuranceinformation WHERE PATIENT_ID=@id";
             SqlCommand cmd = new SqlCommand(updateQuery, conn);
             cmd.Parameters.AddWithValue("@id", pID_txt.Text);
             cmd.Parameters.AddWithValue("@name", name_txt.Text);
@@ -123,17 +118,30 @@ namespace HMSApp2
             dataGridView1.DataSource = LoadPatient();
         }
 
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            pID_txt.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            name_txt.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            birth_txt.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            add_txt.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            phone_txt.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            cname_txt.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            cphone_txt.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            info_txt.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+        }
+    
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-            pID_txt.Text = row.Cells[0].Value.ToString();
-            name_txt.Text = row.Cells[1].Value.ToString();
-            birth_txt.Text = row.Cells[2].Value.ToString();
-            add_txt.Text = row.Cells[3].Value.ToString();
-            phone_txt.Text = row.Cells[4].Value.ToString();
-            cname_txt.Text = row.Cells[5].Value.ToString();
-            cphone_txt.Text = row.Cells[6].Value.ToString();
-            info_txt.Text = row.Cells[7].Value.ToString();
+        //DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+        //pID_txt.Text = row.Cells[0].Value.ToString();
+        //name_txt.Text = row.Cells[1].Value.ToString();
+        //birth_txt.Text = row.Cells[2].Value.ToString();
+        //add_txt.Text = row.Cells[3].Value.ToString();
+        //phone_txt.Text = row.Cells[4].Value.ToString();
+        //cname_txt.Text = row.Cells[5].Value.ToString();
+        //cphone_txt.Text = row.Cells[6].Value.ToString();
+        //info_txt.Text = row.Cells[7].Value.ToString();
         }
 
         //Patient Delete Button
@@ -156,9 +164,6 @@ namespace HMSApp2
             conn.Close();
             dataGridView1.DataSource = LoadPatient();
         }
-
-        
-
 
 
     }

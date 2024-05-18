@@ -93,7 +93,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(25, 66);
+            label3.Location = new Point(12, 66);
             label3.Name = "label3";
             label3.Size = new Size(49, 20);
             label3.TabIndex = 8;
@@ -102,7 +102,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(112, 27);
+            label4.Location = new Point(112, 21);
             label4.Name = "label4";
             label4.Size = new Size(73, 20);
             label4.TabIndex = 9;
@@ -111,61 +111,61 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(322, 136);
+            label6.Location = new Point(303, 139);
             label6.Name = "label6";
-            label6.Size = new Size(187, 20);
+            label6.Size = new Size(153, 20);
             label6.TabIndex = 10;
-            label6.Text = "INSURANCEINFORMATION";
+            label6.Text = "Insurance Information";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Location = new Point(303, 101);
             label7.Name = "label7";
-            label7.Size = new Size(206, 20);
+            label7.Size = new Size(182, 20);
             label7.TabIndex = 11;
-            label7.Text = "EMERGENCYCONTACTPHONE";
+            label7.Text = "Emergency Contact Phone";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(310, 66);
+            label8.Location = new Point(303, 66);
             label8.Name = "label8";
-            label8.Size = new Size(199, 20);
+            label8.Size = new Size(181, 20);
             label8.TabIndex = 12;
-            label8.Text = "EMERGENCYCONTACTNAME";
+            label8.Text = "Emergency Contact Name";
             // 
             // pID_txt
             // 
-            pID_txt.Location = new Point(191, 24);
+            pID_txt.Location = new Point(191, 18);
             pID_txt.Name = "pID_txt";
             pID_txt.Size = new Size(108, 27);
             pID_txt.TabIndex = 13;
             // 
             // info_txt
             // 
-            info_txt.Location = new Point(534, 136);
+            info_txt.Location = new Point(491, 136);
             info_txt.Name = "info_txt";
             info_txt.Size = new Size(171, 27);
             info_txt.TabIndex = 14;
             // 
             // cphone_txt
             // 
-            cphone_txt.Location = new Point(534, 101);
+            cphone_txt.Location = new Point(491, 98);
             cphone_txt.Name = "cphone_txt";
             cphone_txt.Size = new Size(171, 27);
             cphone_txt.TabIndex = 15;
             // 
             // cname_txt
             // 
-            cname_txt.Location = new Point(534, 63);
+            cname_txt.Location = new Point(491, 63);
             cname_txt.Name = "cname_txt";
             cname_txt.Size = new Size(171, 27);
             cname_txt.TabIndex = 16;
             // 
             // add_txt
             // 
-            add_txt.Location = new Point(119, 176);
+            add_txt.Location = new Point(119, 173);
             add_txt.Name = "add_txt";
             add_txt.Size = new Size(168, 27);
             add_txt.TabIndex = 17;
@@ -179,14 +179,14 @@
             // 
             // phone_txt
             // 
-            phone_txt.Location = new Point(119, 101);
+            phone_txt.Location = new Point(119, 98);
             phone_txt.Name = "phone_txt";
             phone_txt.Size = new Size(168, 27);
             phone_txt.TabIndex = 19;
             // 
             // name_txt
             // 
-            name_txt.Location = new Point(119, 68);
+            name_txt.Location = new Point(119, 63);
             name_txt.Name = "name_txt";
             name_txt.Size = new Size(168, 27);
             name_txt.TabIndex = 20;
@@ -194,25 +194,26 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ScrollBar;
-            panel1.Location = new Point(722, 0);
+            panel1.Location = new Point(678, -4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(10, 528);
+            panel1.Size = new Size(10, 554);
             panel1.TabIndex = 21;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(25, 228);
+            dataGridView1.Location = new Point(12, 228);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(484, 276);
             dataGridView1.TabIndex = 22;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
             // button2
             // 
-            button2.Location = new Point(560, 228);
+            button2.Location = new Point(502, 228);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 23;
@@ -222,7 +223,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(560, 445);
+            button3.Location = new Point(502, 381);
             button3.Name = "button3";
             button3.Size = new Size(94, 29);
             button3.TabIndex = 24;
@@ -232,7 +233,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(560, 350);
+            button4.Location = new Point(502, 303);
             button4.Name = "button4";
             button4.Size = new Size(94, 29);
             button4.TabIndex = 25;
@@ -244,7 +245,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1199, 529);
+            ClientSize = new Size(1293, 536);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
