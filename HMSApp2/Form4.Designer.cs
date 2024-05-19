@@ -49,7 +49,14 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            panel1 = new Panel();
+            label9 = new Label();
+            dataGridView2 = new DataGridView();
+            label10 = new Label();
+            patientID_txt = new TextBox();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -232,11 +239,73 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ScrollBar;
+            panel1.ForeColor = SystemColors.ScrollBar;
+            panel1.Location = new Point(668, 12);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(10, 539);
+            panel1.TabIndex = 26;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Arial Rounded MT Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(684, 21);
+            label9.Name = "label9";
+            label9.Size = new Size(354, 34);
+            label9.TabIndex = 27;
+            label9.Text = "Patient Medical History";
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(684, 101);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersVisible = false;
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.Size = new Size(496, 423);
+            dataGridView2.TabIndex = 28;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(684, 66);
+            label10.Name = "label10";
+            label10.Size = new Size(126, 20);
+            label10.TabIndex = 29;
+            label10.Text = "Choose Patient ID";
+            // 
+            // patientID_txt
+            // 
+            patientID_txt.Location = new Point(816, 63);
+            patientID_txt.Name = "patientID_txt";
+            patientID_txt.Size = new Size(125, 27);
+            patientID_txt.TabIndex = 30;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(979, 63);
+            button5.Name = "button5";
+            button5.Size = new Size(94, 27);
+            button5.TabIndex = 31;
+            button5.Text = "Show";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(682, 536);
+            ClientSize = new Size(1192, 536);
+            Controls.Add(button5);
+            Controls.Add(patientID_txt);
+            Controls.Add(label10);
+            Controls.Add(dataGridView2);
+            Controls.Add(label9);
+            Controls.Add(panel1);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -262,6 +331,7 @@
             Text = "Patient Page";
             Load += Form4_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -289,5 +359,11 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private Panel panel1;
+        private Label label9;
+        private DataGridView dataGridView2;
+        private Label label10;
+        private TextBox patientID_txt;
+        private Button button5;
     }
 }

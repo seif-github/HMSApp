@@ -27,6 +27,18 @@ namespace HMSApp2
             conn.Close();
             return dt;
         }
+
+        public DataTable LoadMEDICATION()
+        {
+            DataTable dt = new DataTable();
+            string query = "SELECT T.PATIENT_ID, P.NAME AS Patient_Name, M.MEDICATION_ID, M.NAME AS Med_Name, M.DOSAGE, M.DESCRIPTION FROM MEDICATION AS M INNER JOIN TAKES AS T ON M.MEDICATION_ID = T.MEDICATION_ID INNER JOIN PATIENT AS P ON T.PATIENT_ID = P.PATIENT_ID";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(dt);
+            conn.Close();
+            return dt;
+        }
         public Form4()
         {
             InitializeComponent();
@@ -111,19 +123,19 @@ namespace HMSApp2
             cphone_txt.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             info_txt.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
         }
-    
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-        //DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-        //pID_txt.Text = row.Cells[0].Value.ToString();
-        //name_txt.Text = row.Cells[1].Value.ToString();
-        //birth_txt.Text = row.Cells[2].Value.ToString();
-        //add_txt.Text = row.Cells[3].Value.ToString();
-        //phone_txt.Text = row.Cells[4].Value.ToString();
-        //cname_txt.Text = row.Cells[5].Value.ToString();
-        //cphone_txt.Text = row.Cells[6].Value.ToString();
-        //info_txt.Text = row.Cells[7].Value.ToString();
+            //DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            //pID_txt.Text = row.Cells[0].Value.ToString();
+            //name_txt.Text = row.Cells[1].Value.ToString();
+            //birth_txt.Text = row.Cells[2].Value.ToString();
+            //add_txt.Text = row.Cells[3].Value.ToString();
+            //phone_txt.Text = row.Cells[4].Value.ToString();
+            //cname_txt.Text = row.Cells[5].Value.ToString();
+            //cphone_txt.Text = row.Cells[6].Value.ToString();
+            //info_txt.Text = row.Cells[7].Value.ToString();
         }
 
         //Patient Delete Button
@@ -147,6 +159,20 @@ namespace HMSApp2
             dataGridView1.DataSource = LoadPatient();
         }
 
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        // show patient medical history
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            string query = "SELECT T.PATIENT_ID, P.NAME AS Patient_Name, M.MEDICATION_ID, M.NAME AS Med_Name, M.DOSAGE, M.DESCRIPTION FROM MEDICATION AS M INNER JOIN TAKES AS T ON M.MEDICATION_ID = T.MEDICATION_ID INNER JOIN PATIENT AS P ON T.PATIENT_ID = P.PATIENT_ID WHERE P.PATIENT_ID = "+patientID_txt.Text+"";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
+            sda.Fill(dt);
+            conn.Close();
+
+            dataGridView2.DataSource = dt;
+        }
     }
 }

@@ -199,6 +199,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ScrollBar;
+            panel1.ForeColor = SystemColors.ScrollBar;
             panel1.Location = new Point(613, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(10, 470);
