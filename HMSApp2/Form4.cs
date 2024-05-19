@@ -27,15 +27,11 @@ namespace HMSApp2
             conn.Close();
             return dt;
         }
-
-        
-
         public Form4()
         {
             InitializeComponent();
             dataGridView1.DataSource = LoadPatient();
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -64,7 +60,6 @@ namespace HMSApp2
             cmd.Parameters.AddWithValue("@emergencycontactname", cname_txt.Text);
             cmd.Parameters.AddWithValue("@emergencycontactphone", cphone_txt.Text);
             cmd.Parameters.AddWithValue("@insuranceinformation", info_txt.Text);
-
             cmd.ExecuteNonQuery();
             pID_txt.Text = "";
             name_txt.Text = "";
@@ -78,9 +73,7 @@ namespace HMSApp2
             dataGridView1.DataSource = LoadPatient();
         }
 
-
         //Patient Update Button
-
         private void button4_Click(object sender, EventArgs e)
         {
             conn.Open();
