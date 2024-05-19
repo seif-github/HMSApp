@@ -28,23 +28,12 @@ namespace HMSApp2
             return dt;
         }
 
-        public DataTable LoadAPPOINTMENT()
-        {
-            DataTable dt = new DataTable();
-            string query = "SELECT * FROM APPOINTMENT";
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            sda.Fill(dt);
-            conn.Close();
-            return dt;
-        }
+        
 
         public Form4()
         {
             InitializeComponent();
             dataGridView1.DataSource = LoadPatient();
-            //dataGridView2.DataSource = LoadAPPOINTMENT();
         }
 
 

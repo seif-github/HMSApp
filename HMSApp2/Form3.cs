@@ -58,8 +58,9 @@ namespace HMSApp2
         private void button2_Click(object sender, EventArgs e)
         {
             conn.Open();
-            string insertQuery = "INSERT INTO DOCTOR(NAME, SPECIALTY, DEPARTMENT, YEARSOFEXPERIENCE) VALUES(@name, @special, @dep, @yexp)";
+            string insertQuery = "INSERT INTO DOCTOR(DOCTOR_ID, NAME, SPECIALTY, DEPARTMENT, YEARSOFEXPERIENCE) VALUES(@id, @name, @special, @dep, @yexp)";
             SqlCommand cmd = new SqlCommand(insertQuery, conn);
+            cmd.Parameters.AddWithValue("@id", dID_txt.Text);
             cmd.Parameters.AddWithValue("@name", dName_txt.Text);
             cmd.Parameters.AddWithValue("@special", special_txt.Text);
             cmd.Parameters.AddWithValue("@dep", textBox1.Text);
@@ -95,14 +96,23 @@ namespace HMSApp2
             dataGridView1.DataSource = LoadDOCTOR();
         }
 
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            dID_txt.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            dName_txt.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            special_txt.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            textBox1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            yExp_txt.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-            dID_txt.Text = row.Cells[0].Value.ToString();
-            dName_txt.Text = row.Cells[1].Value.ToString();
-            special_txt.Text = row.Cells[2].Value.ToString();
-            textBox1.Text = row.Cells[3].Value.ToString();
-            yExp_txt.Text = row.Cells[4].Value.ToString();
+            //DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            //dID_txt.Text = row.Cells[0].Value.ToString();
+            //dName_txt.Text = row.Cells[1].Value.ToString();
+            //special_txt.Text = row.Cells[2].Value.ToString();
+            //textBox1.Text = row.Cells[3].Value.ToString();
+            //yExp_txt.Text = row.Cells[4].Value.ToString();
         }
         //doctor Delete Button
         private void button4_Click(object sender, EventArgs e)
@@ -161,13 +171,24 @@ namespace HMSApp2
             dataGridView2.DataSource = LoadMEDICATION();
         }
 
+        
+
+        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
+        {
+            medID_txt.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+            medName_txt.Text = dataGridView2.CurrentRow.Cells[1].Value.ToString();
+            dosage_txt.Text = dataGridView2.CurrentRow.Cells[2].Value.ToString();
+            desc_txt.Text = dataGridView2.CurrentRow.Cells[3].Value.ToString();
+        }
+        
+
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
-            medID_txt.Text = row.Cells[0].Value.ToString();
-            medName_txt.Text = row.Cells[1].Value.ToString();
-            dosage_txt.Text = row.Cells[2].Value.ToString();
-            desc_txt.Text = row.Cells[3].Value.ToString();
+            //DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+            //medID_txt.Text = row.Cells[0].Value.ToString();
+            //medName_txt.Text = row.Cells[1].Value.ToString();
+            //dosage_txt.Text = row.Cells[2].Value.ToString();
+            //desc_txt.Text = row.Cells[3].Value.ToString();
         }
 
         private void label10_Click(object sender, EventArgs e) { }
@@ -191,5 +212,7 @@ namespace HMSApp2
         {
 
         }
+
+        
     }
 }

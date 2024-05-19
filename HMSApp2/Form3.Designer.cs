@@ -82,6 +82,7 @@
             dataGridView1.Size = new Size(492, 269);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellClick;
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
             // button2
             // 
@@ -198,9 +199,9 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ScrollBar;
-            panel1.Location = new Point(613, 12);
+            panel1.Location = new Point(613, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(10, 465);
+            panel1.Size = new Size(10, 470);
             panel1.TabIndex = 9;
             // 
             // dataGridView2
@@ -213,6 +214,7 @@
             dataGridView2.Size = new Size(484, 269);
             dataGridView2.TabIndex = 10;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            dataGridView2.SelectionChanged += dataGridView2_SelectionChanged;
             // 
             // label6
             // 

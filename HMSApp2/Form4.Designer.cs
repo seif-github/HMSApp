@@ -45,7 +45,6 @@
             birth_txt = new TextBox();
             phone_txt = new TextBox();
             name_txt = new TextBox();
-            panel1 = new Panel();
             dataGridView1 = new DataGridView();
             button2 = new Button();
             button3 = new Button();
@@ -191,14 +190,6 @@
             name_txt.Size = new Size(168, 27);
             name_txt.TabIndex = 20;
             // 
-            // panel1
-            // 
-            panel1.BackColor = SystemColors.ScrollBar;
-            panel1.Location = new Point(678, -4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(10, 554);
-            panel1.TabIndex = 21;
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -213,7 +204,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(502, 228);
+            button2.Location = new Point(537, 228);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 23;
@@ -223,7 +214,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(502, 381);
+            button3.Location = new Point(537, 378);
             button3.Name = "button3";
             button3.Size = new Size(94, 29);
             button3.TabIndex = 24;
@@ -233,7 +224,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(502, 303);
+            button4.Location = new Point(537, 303);
             button4.Name = "button4";
             button4.Size = new Size(94, 29);
             button4.TabIndex = 25;
@@ -245,12 +236,11 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1293, 536);
+            ClientSize = new Size(682, 536);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(dataGridView1);
-            Controls.Add(panel1);
             Controls.Add(name_txt);
             Controls.Add(phone_txt);
             Controls.Add(birth_txt);
@@ -295,7 +285,6 @@
         private TextBox birth_txt;
         private TextBox phone_txt;
         private TextBox name_txt;
-        private Panel panel1;
         private DataGridView dataGridView1;
         private Button button2;
         private Button button3;
