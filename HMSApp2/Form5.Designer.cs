@@ -46,6 +46,10 @@
             update_btn = new Button();
             delete_btn = new Button();
             search_btn = new Button();
+            label7 = new Label();
+            label8 = new Label();
+            searchP_txt = new TextBox();
+            searchDate_txt = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -66,7 +70,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(578, 276);
+            dataGridView1.Size = new Size(758, 276);
             dataGridView1.TabIndex = 23;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
@@ -150,7 +154,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(336, 119);
+            label6.Location = new Point(615, 54);
             label6.Name = "label6";
             label6.Size = new Size(142, 20);
             label6.TabIndex = 24;
@@ -159,7 +163,7 @@
             // 
             // search_txt
             // 
-            search_txt.Location = new Point(484, 116);
+            search_txt.Location = new Point(763, 51);
             search_txt.Name = "search_txt";
             search_txt.Size = new Size(125, 27);
             search_txt.TabIndex = 29;
@@ -173,7 +177,7 @@
             // 
             // add_btn
             // 
-            add_btn.Location = new Point(632, 162);
+            add_btn.Location = new Point(795, 208);
             add_btn.Name = "add_btn";
             add_btn.Size = new Size(94, 29);
             add_btn.TabIndex = 31;
@@ -183,7 +187,7 @@
             // 
             // update_btn
             // 
-            update_btn.Location = new Point(632, 212);
+            update_btn.Location = new Point(795, 258);
             update_btn.Name = "update_btn";
             update_btn.Size = new Size(94, 29);
             update_btn.TabIndex = 32;
@@ -193,7 +197,7 @@
             // 
             // delete_btn
             // 
-            delete_btn.Location = new Point(632, 263);
+            delete_btn.Location = new Point(795, 309);
             delete_btn.Name = "delete_btn";
             delete_btn.Size = new Size(94, 29);
             delete_btn.TabIndex = 33;
@@ -203,7 +207,7 @@
             // 
             // search_btn
             // 
-            search_btn.Location = new Point(632, 116);
+            search_btn.Location = new Point(795, 162);
             search_btn.Name = "search_btn";
             search_btn.Size = new Size(94, 27);
             search_btn.TabIndex = 34;
@@ -211,16 +215,52 @@
             search_btn.UseVisualStyleBackColor = true;
             search_btn.Click += search_btn_Click;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(615, 87);
+            label7.Name = "label7";
+            label7.Size = new Size(141, 20);
+            label7.TabIndex = 24;
+            label7.Text = "Search By Patient ID";
+            label7.Click += label1_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(615, 119);
+            label8.Name = "label8";
+            label8.Size = new Size(109, 20);
+            label8.TabIndex = 24;
+            label8.Text = "Search By Date";
+            label8.Click += label1_Click;
+            // 
+            // searchP_txt
+            // 
+            searchP_txt.Location = new Point(764, 84);
+            searchP_txt.Name = "searchP_txt";
+            searchP_txt.Size = new Size(125, 27);
+            searchP_txt.TabIndex = 29;
+            // 
+            // searchDate_txt
+            // 
+            searchDate_txt.Location = new Point(763, 116);
+            searchDate_txt.Name = "searchDate_txt";
+            searchDate_txt.Size = new Size(125, 27);
+            searchDate_txt.TabIndex = 29;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(907, 450);
             Controls.Add(search_btn);
             Controls.Add(delete_btn);
             Controls.Add(update_btn);
             Controls.Add(add_btn);
             Controls.Add(reason_txt);
+            Controls.Add(searchDate_txt);
+            Controls.Add(searchP_txt);
             Controls.Add(search_txt);
             Controls.Add(label5);
             Controls.Add(apDate_txt);
@@ -229,6 +269,8 @@
             Controls.Add(apID_txt);
             Controls.Add(label3);
             Controls.Add(label2);
+            Controls.Add(label8);
+            Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label4);
             Controls.Add(label1);
@@ -262,5 +304,9 @@
         private Button update_btn;
         private Button delete_btn;
         private Button search_btn;
+        private Label label7;
+        private Label label8;
+        private TextBox searchP_txt;
+        private TextBox searchDate_txt;
     }
 }

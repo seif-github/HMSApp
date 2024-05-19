@@ -110,14 +110,42 @@ namespace HMSApp2
         // Appointment search by doctor id button
         private void search_btn_Click(object sender, EventArgs e)
         {
+            //DataTable dt = new DataTable();
+            //string query = "SELECT * FROM APPOINTMENT WHERE DOCTOR_ID="+search_txt.Text+"";
+            //conn.Open();
+            //SqlCommand cmd = new SqlCommand(query, conn);
+            //SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            //sda.Fill(dt);
+            //conn.Close();
+            //search_txt.Text = "";
+            //dataGridView1.DataSource = dt;
             DataTable dt = new DataTable();
-            string query = "SELECT * FROM APPOINTMENT WHERE DOCTOR_ID="+search_txt.Text+"";
+            string query = "SELECT * FROM APPOINTMENT";
+
+
+            if (!string.IsNullOrEmpty(search_txt.Text))
+            {
+                query += " WHERE DOCTOR_ID = " + search_txt.Text;
+            }
+
+
+            if (!string.IsNullOrEmpty(searchDate_txt.Text))
+            {
+                query += " AND APPOINTMENTDATE = '" + searchDate_txt.Text + "'";
+            }
+
+
+            if (!string.IsNullOrEmpty(searchP_txt.Text))
+            {
+                query += " AND PATIENT_ID = " + searchP_txt.Text;
+            }
+
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(dt);
-            conn.Close();
-            search_txt.Text = "";
+            conn.Close();            
+
             dataGridView1.DataSource = dt;
         }
     }

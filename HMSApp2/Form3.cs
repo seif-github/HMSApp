@@ -32,7 +32,7 @@ namespace HMSApp2
         public DataTable LoadMEDICATION()
         {
             DataTable dt = new DataTable();
-            string query = "SELECT * FROM MEDICATION as M INNER JOIN TAKES as T On M.MEDICATION_ID=T.MEDICATION_ID INNER JOIN PATIENT as P On T.PATIENT_ID=P.PATIENT_ID";
+            string query = "SELECT M.MEDICATION_ID, M.NAME AS Med_Name, M.DOSAGE, M.DESCRIPTION, T.PATIENT_ID, P.NAME AS Patient_Name FROM MEDICATION as M INNER JOIN TAKES as T On M.MEDICATION_ID=T.MEDICATION_ID INNER JOIN PATIENT as P On T.PATIENT_ID=P.PATIENT_ID ORDER BY M.MEDICATION_ID ";
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -156,13 +156,15 @@ namespace HMSApp2
         private void button6_Click(object sender, EventArgs e)
         {
             conn.Open();
-            string insertQuery = "UPDATE MEDICATION SET NAME=@name, DOSAGE=@dosage, DESCRIPTION=@desc WHERE MEDICATION_ID=@id";
+            string insertQuery = "UPDATE MEDICATION SET NAME=@name, DOSAGE=@dosage, DESCRIPTION=@desc WHERE MEDICATION_ID=@id; UPDATE TAKES SET PATIENT_ID=@pid WHERE MEDICATION_ID=@id";
             SqlCommand cmd = new SqlCommand(insertQuery, conn);
             cmd.Parameters.AddWithValue("@name", medName_txt.Text);
             cmd.Parameters.AddWithValue("@dosage", dosage_txt.Text);
             cmd.Parameters.AddWithValue("@desc", desc_txt.Text);
             cmd.Parameters.AddWithValue("@id", medID_txt.Text);
+            cmd.Parameters.AddWithValue("@pid", pID_txt.Text);
             cmd.ExecuteNonQuery();
+            pID_txt.Text = "";
             medID_txt.Text = "";
             medName_txt.Text = "";
             dosage_txt.Text = "";
@@ -179,6 +181,7 @@ namespace HMSApp2
             medName_txt.Text = dataGridView2.CurrentRow.Cells[1].Value.ToString();
             dosage_txt.Text = dataGridView2.CurrentRow.Cells[2].Value.ToString();
             desc_txt.Text = dataGridView2.CurrentRow.Cells[3].Value.ToString();
+            pID_txt.Text = dataGridView2.CurrentRow.Cells[4].Value.ToString();
         }
         
 
