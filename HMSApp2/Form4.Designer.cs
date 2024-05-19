@@ -55,6 +55,8 @@
             label10 = new Label();
             patientID_txt = new TextBox();
             button5 = new Button();
+            label11 = new Label();
+            rID_txt = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -295,11 +297,29 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(303, 176);
+            label11.Name = "label11";
+            label11.Size = new Size(68, 20);
+            label11.TabIndex = 32;
+            label11.Text = "Room ID";
+            // 
+            // rID_txt
+            // 
+            rID_txt.Location = new Point(491, 173);
+            rID_txt.Name = "rID_txt";
+            rID_txt.Size = new Size(171, 27);
+            rID_txt.TabIndex = 33;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1192, 536);
+            Controls.Add(rID_txt);
+            Controls.Add(label11);
             Controls.Add(button5);
             Controls.Add(patientID_txt);
             Controls.Add(label10);
@@ -328,7 +348,7 @@
             Controls.Add(label5);
             Controls.Add(button1);
             Name = "Form4";
-            Text = "Patient Page";
+            Text = "s";
             Load += Form4_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
@@ -365,5 +385,7 @@
         private Label label10;
         private TextBox patientID_txt;
         private Button button5;
+        private Label label11;
+        private TextBox rID_txt;
     }
 }

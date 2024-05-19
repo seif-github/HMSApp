@@ -34,11 +34,13 @@
             button1 = new Button();
             label1 = new Label();
             test_label = new Label();
+            button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // doctor_btn
             // 
-            doctor_btn.Location = new Point(149, 184);
+            doctor_btn.Location = new Point(159, 130);
             doctor_btn.Name = "doctor_btn";
             doctor_btn.Size = new Size(123, 86);
             doctor_btn.TabIndex = 0;
@@ -48,7 +50,7 @@
             // 
             // patient_btn
             // 
-            patient_btn.Location = new Point(310, 184);
+            patient_btn.Location = new Point(311, 130);
             patient_btn.Name = "patient_btn";
             patient_btn.Size = new Size(123, 86);
             patient_btn.TabIndex = 0;
@@ -58,7 +60,7 @@
             // 
             // app_btn
             // 
-            app_btn.Location = new Point(469, 184);
+            app_btn.Location = new Point(461, 130);
             app_btn.Name = "app_btn";
             app_btn.Size = new Size(123, 86);
             app_btn.TabIndex = 0;
@@ -96,11 +98,33 @@
             test_label.TabIndex = 3;
             test_label.Text = "Admin";
             // 
+            // button2
+            // 
+            button2.Location = new Point(246, 270);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 4;
+            button2.Text = "Add Nurse";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(403, 270);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 29);
+            button3.TabIndex = 5;
+            button3.Text = "Add Room";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
+            Controls.Add(button2);
             Controls.Add(test_label);
             Controls.Add(label1);
             Controls.Add(button1);
@@ -122,5 +146,7 @@
         private Button button1;
         private Label label1;
         private Label test_label;
+        private Button button2;
+        private Button button3;
     }
 }

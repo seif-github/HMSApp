@@ -14,7 +14,7 @@ namespace HMSApp2
 {
     public partial class Form4 : Form
     {
-        SqlConnection conn = new SqlConnection("Data Source=SEIF;Initial Catalog=HMSDB5;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+        SqlConnection conn = new SqlConnection("Data Source=SEIF;Initial Catalog=HMSDB6;Integrated Security=True;TrustServerCertificate=True");
 
         public DataTable LoadPatient()
         {
@@ -61,9 +61,9 @@ namespace HMSApp2
         private void button2_Click(object sender, EventArgs e)
         {
             conn.Open();
-            string insertQuery = "INSERT INTO PATIENT(PATIENT_ID, NAME, DATEOFBIRTH, ADDRESS , PHONENUMBER , EMERGENCYCONTACTNAME , EMERGENCYCONTACTPHONE , INSURANCEINFORMATION ) VALUES(@id, @name, @dateofbirth, @address , @phonenumber , @emergencycontactname , @emergencycontactphone  , @insuranceinformation  )";
+            string insertQuery = "INSERT INTO PATIENT(PATIENT_ID, NAME, DATEOFBIRTH, ADDRESS , PHONENUMBER , EMERGENCYCONTACTNAME , EMERGENCYCONTACTPHONE , INSURANCEINFORMATION, ROOM_ID) VALUES(@id, @name, @dateofbirth, @address , @phonenumber , @emergencycontactname , @emergencycontactphone  , @insuranceinformation, @rid)";
             SqlCommand cmd = new SqlCommand(insertQuery, conn);
-
+            cmd.Parameters.AddWithValue("@rid", rID_txt.Text);
             cmd.Parameters.AddWithValue("@id", pID_txt.Text);
             cmd.Parameters.AddWithValue("@name", name_txt.Text);
             cmd.Parameters.AddWithValue("@dateofbirth", birth_txt.Text);
@@ -73,6 +73,7 @@ namespace HMSApp2
             cmd.Parameters.AddWithValue("@emergencycontactphone", cphone_txt.Text);
             cmd.Parameters.AddWithValue("@insuranceinformation", info_txt.Text);
             cmd.ExecuteNonQuery();
+            rID_txt.Text = "";
             pID_txt.Text = "";
             name_txt.Text = "";
             birth_txt.Text = "";
@@ -89,8 +90,9 @@ namespace HMSApp2
         private void button4_Click(object sender, EventArgs e)
         {
             conn.Open();
-            string updateQuery = "UPDATE PATIENT SET PATIENT_ID=@id , NAME=@name,  DATEOFBIRTH=@dateofbirth, ADDRESS=@address , PHONENUMBER=@phonenumber ,EMERGENCYCONTACTNAME=@emergencycontactname ,EMERGENCYCONTACTPHONE=@emergencycontactphone , INSURANCEINFORMATION=@insuranceinformation WHERE PATIENT_ID=@id";
+            string updateQuery = "UPDATE PATIENT SET PATIENT_ID=@id , NAME=@name,  DATEOFBIRTH=@dateofbirth, ADDRESS=@address , PHONENUMBER=@phonenumber ,EMERGENCYCONTACTNAME=@emergencycontactname ,EMERGENCYCONTACTPHONE=@emergencycontactphone , INSURANCEINFORMATION=@insuranceinformation, ROOM_ID=@rid WHERE PATIENT_ID=@id";
             SqlCommand cmd = new SqlCommand(updateQuery, conn);
+            cmd.Parameters.AddWithValue("@rid", rID_txt.Text);
             cmd.Parameters.AddWithValue("@id", pID_txt.Text);
             cmd.Parameters.AddWithValue("@name", name_txt.Text);
             cmd.Parameters.AddWithValue("@dateofbirth", birth_txt.Text);
@@ -100,6 +102,7 @@ namespace HMSApp2
             cmd.Parameters.AddWithValue("@emergencycontactphone", cphone_txt.Text);
             cmd.Parameters.AddWithValue("@insuranceinformation", info_txt.Text);
             cmd.ExecuteNonQuery();
+            rID_txt.Text = "";
             pID_txt.Text = "";
             name_txt.Text = "";
             birth_txt.Text = "";
@@ -122,6 +125,7 @@ namespace HMSApp2
             cname_txt.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             cphone_txt.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             info_txt.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            rID_txt.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
         }
 
 
@@ -147,6 +151,7 @@ namespace HMSApp2
             SqlCommand cmd = new SqlCommand(updateQuery, conn);
             cmd.Parameters.AddWithValue("@id", pID_txt.Text);
             cmd.ExecuteNonQuery();
+            rID_txt.Text = "";
             pID_txt.Text = "";
             name_txt.Text = "";
             birth_txt.Text = "";

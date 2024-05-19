@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Nhi+NYbqGYX4NbqoKZkTo0gzFE+C63qmuF75dOxmxMOlqA4yva/tiYBPL/GRnOpY8RBYmNOiF1NxezxuExTeMQ==",
+  "dgSpecHash": "qGiGSShaU3RmFxGqzaRZbL5E9u5rFzSKacNLNgDrKxV0zgQQo/D/mD9vgXM7lDSoNCP/rCaVp/jWJTQuEHz2yQ==",
   "success": true,
-  "projectFilePath": "D:\\GitHub_Repos\\HMSApp\\HMSApp\\HMSApp2\\HMSApp2.csproj",
+  "projectFilePath": "D:\\test\\HMSApp2\\HMSApp2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Seif\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Seif\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -53,5 +53,19 @@ namespace HMSApp2
         {
 
         }
+        // Add Nurse
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var nurse = new Form6();
+            nurse.Show();
+            this.Hide();
+        }
+        // Add Room
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var room = new Form7();
+            room.Show();
+            this.Hide();
+        }
     }
 }

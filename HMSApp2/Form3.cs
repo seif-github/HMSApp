@@ -17,7 +17,7 @@ namespace HMSApp2
     {
 
 
-        SqlConnection conn = new SqlConnection("Data Source=SEIF;Initial Catalog=HMSDB5;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+        SqlConnection conn = new SqlConnection("Data Source=SEIF;Initial Catalog=HMSDB6;Integrated Security=True;TrustServerCertificate=True");
         public DataTable LoadDOCTOR()
         {
             DataTable dt = new DataTable();
