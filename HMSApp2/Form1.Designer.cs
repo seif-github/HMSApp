@@ -115,6 +115,7 @@
             Controls.Add(label2);
             Name = "Form1";
             Text = "Sign Up";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

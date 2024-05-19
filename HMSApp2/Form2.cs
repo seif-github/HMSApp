@@ -12,9 +12,13 @@ namespace HMSApp2
 {
     public partial class Form2 : Form
     {
+        public static Form2 instance;
+        public Label lab1;
         public Form2()
         {
             InitializeComponent();
+            instance = this;
+            lab1 = test_label;
         }
 
         private void doctor_btn_Click(object sender, EventArgs e)
@@ -43,6 +47,11 @@ namespace HMSApp2
             var signup = new Form1();
             signup.Show();
             this.Hide();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
